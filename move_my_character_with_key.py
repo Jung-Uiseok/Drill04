@@ -75,4 +75,13 @@ while running:
     y += dir_y * 5
     delay(0.05)
 
+    if x < 0:
+        x = 0
+    elif x > 1280:
+        x = 1280
+    if y < 0:
+        y = 0
+    elif y > 1080:
+        y = 1080
+
 close_canvas()
