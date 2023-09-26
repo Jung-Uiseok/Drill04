@@ -2,7 +2,7 @@ from pico2d import*
 
 open_canvas()
 background = load_image('TUK_GROUND.png')
-character = load_image('sprite_sheet.png')
+character = load_image('SPRITE_SHEET.png')
 
 def handle_events():
     global running
@@ -14,9 +14,9 @@ def handle_events():
             running == False
         elif event.type == SDL_KEYDOWN:
             if event.key == SDLK_RIGHT:
-                x += 10
+                x = x + 10
             elif event.key == SDLK_LEFT:
-                x -= 10
+                x = x - 10
             elif event.key == SDLK_ESCAPE:
                 running = False
 
@@ -27,7 +27,7 @@ frame = 0
 while running:
     clear_canvas()
     background.draw(600,100)
-    character.clip_draw(frame*50,1000,100,100,x,90)
+    character.clip_draw(frame*100,136,100,136,x,100)
     update_canvas()
     handle_events()
     frame = (frame + 1) % 8
